@@ -20,9 +20,5 @@
 
 </script>
 
-<?php
-echo time();
-?>
-
 </body>
 </html>
