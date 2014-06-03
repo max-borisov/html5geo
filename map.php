@@ -25,6 +25,11 @@ $pos = unserialize(file_get_contents('pos.txt'));
 <div id="map"></div>
 
 <script type="text/javascript">
+
+    setInterval(function() {
+        location.reload();
+    }, 1000 * 60 * 15);
+
     var lat = <?=$pos['lat']?>;
     var lng = <?=$pos['lng']?>;
     var pos = new google.maps.LatLng(lat, lng);
