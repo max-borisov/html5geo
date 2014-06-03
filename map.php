@@ -4,6 +4,10 @@
     <title></title>
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
     <style type="text/css">
+        body {
+            width: 100%;
+            height: 100%;
+        }
         #map {
             margin: 0 auto;
             width: 90%;
