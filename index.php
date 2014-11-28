@@ -8,7 +8,8 @@
     <style type="text/css">
         #main {
             width: 80%;
-            font-size: 1.5em;
+            /*font-size: 1.5em;*/
+            font-size: 50px;
             margin: 0 auto;
             text-align: center;
         }
