@@ -4,7 +4,7 @@ var Geo = {
         var that = this;
         if (navigator.geolocation) {
 //            var timeoutVal = 10 * 1000 * 1000;
-            var timeoutVal = 3 * 1000;
+            var timeoutVal = 1 * 1000;
             navigator.geolocation.watchPosition(
                 that._displayPosition,
                 that._displayError,
