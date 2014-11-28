@@ -4,17 +4,12 @@ var Geo = {
         var that = this;
         if (navigator.geolocation) {
 //            var timeoutVal = 10 * 1000 * 1000;
-            /*navigator.geolocation.getCurrentPosition(
-                that._displayPosition,
-                that._displayError
-            );*/
-            var timeoutVal = 10 * 1000 * 1000;
+            var timeoutVal = 3 * 1000;
             navigator.geolocation.watchPosition(
                 that._displayPosition,
                 that._displayError,
-                { timeout: timeoutVal, maximumAge: 0}
+                { timeout: timeoutVal, maximumAge: 0, enableHighAccuracy: false }
             );
-
         }
         else {
             alert("Geolocation is not supported by this browser");
@@ -22,15 +17,13 @@ var Geo = {
     },
 
     _displayPosition: function(position) {
-//        alert("Latitude: " + position.coords.latitude + ", Longitude: " + position.coords.longitude)
         $('#lat').html(position.coords.latitude);
         $('#lng').html(position.coords.longitude);
+        var dateUp = new Date();
+        $('#time-span').html(dateUp.getHours() + ':' + dateUp.getMinutes());
 //        this._sendPosition(position.coords.latitude, position.coords.longitude);
 
-        $.post( "/ajax.php", { lat: position.coords.latitude, lng: position.coords.longitude }, function(data) {
-//            alert(123);
-        });
-
+        $.post( "/ajax.php", { lat: position.coords.latitude, lng: position.coords.longitude }, function(data) {});
     },
 
     _displayError: function(error) {
